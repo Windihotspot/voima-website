@@ -16,11 +16,12 @@ const links = [
 <template>
   <header class="sticky top-0 z-50 bg-[#0B1220]/90 backdrop-blur-md border-b border-white/10">
     <div class="max-w-7xl mx-auto px-6 lg:px-10 flex items-center justify-between h-16">
-      <RouterLink to="/" class="flex items-center gap-2 text-white shrink-0">
-        <span class="w-2 h-2 rounded-full bg-[#1F8A63]"></span>
-        <span class="font-['Fraunces'] text-lg tracking-tight"
-          >Voima <span class="text-[#1F8A63]">CaaS</span></span
-        >
+      <RouterLink to="/" class="flex items-center shrink-0">
+        <img
+          src="../assets/Voima.jpeg"
+          alt="Voima CaaS"
+          class="h-9 w-auto object-contain sm:h-10"
+        />
       </RouterLink>
 
       <nav class="hidden md:flex items-center gap-8 text-sm font-['IBM_Plex_Mono']">

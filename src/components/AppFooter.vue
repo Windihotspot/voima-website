@@ -15,9 +15,13 @@ function subscribe() {
   <footer class="bg-[#080D16] py-16">
     <div class="max-w-7xl mx-auto px-6 lg:px-10 grid md:grid-cols-3 gap-12">
       <div>
-        <p class="font-['Fraunces'] text-white text-lg mb-3">
-          Voima <span class="text-[#1F8A63]">CaaS</span>
-        </p>
+        <RouterLink to="/" class="flex items-center shrink-0">
+          <img
+            src="../assets/Voima.jpeg"
+            alt="Voima CaaS"
+            class="h-9 w-auto object-contain sm:h-10"
+          />
+        </RouterLink>
         <p class="text-white/40 text-sm leading-relaxed">
           Compliance infrastructure for UK SMEs — FCA, AML and GDPR, run as a living system.
         </p>
