@@ -17,7 +17,7 @@ function subscribe() {
       <div>
         <RouterLink to="/" class="flex items-center shrink-0">
           <img
-            src="../assets/Voima.jpeg"
+            src="../assets/voima-logo.png"
             alt="Voima CaaS"
             class="h-9 w-auto object-contain sm:h-10"
           />

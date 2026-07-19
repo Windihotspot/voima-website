@@ -29,41 +29,42 @@ const segments = [
 const offerings = [
   {
     code: 'SVC-01',
-    title: 'Compliance Deployment Packs',
-    desc: 'We build your compliance framework from the ground up.',
+    title: 'Compliance Infrastructure',
+    desc: 'Build and operate your compliance function through a structured, managed framework.',
     includes: [
-      'FCA regulatory mapping',
-      'AML compliance frameworks',
-      'GDPR and data protection controls',
-      'Risk classification models',
-      'Policy and governance documents'
+      'Compliance Health Assessment',
+      'Governance Framework',
+      'Policies & Controls',
+      'Risk Management Framework',
+      'Compliance Workspace'
     ],
-    outcome: 'A regulator-ready compliance system.'
+    outcome: 'A structured compliance function built for day-to-day operations.'
   },
   {
     code: 'SVC-02',
-    title: 'Digital Compliance Platform',
-    desc: 'A platform that runs your compliance operations day to day.',
+    title: 'Compliance Operations',
+    desc: 'Ongoing oversight and operational support to keep your compliance programme effective.',
     includes: [
-      'KYC and onboarding workflows',
-      'AML monitoring systems',
-      'Policy management',
-      'Regulatory alerts',
-      'Compliance tracking'
+      'Compliance Task Management',
+      'Regulatory Change Management',
+      'Compliance Reviews',
+      'Management Reporting',
+      'Evidence & Audit Management'
     ],
-    outcome: 'Structured, trackable compliance processes.'
+    outcome: 'Continuous compliance oversight with clear accountability.'
   },
   {
     code: 'SVC-03',
-    title: 'Cross-Border Compliance',
-    desc: 'Support for UK businesses expanding into international markets.',
+    title: 'Compliance Advisory',
+    desc: 'Dedicated compliance expertise to support growth, governance, and regulatory readiness.',
     includes: [
-      'UK regulatory mapping',
-      'Africa and EU compliance support',
-      'Licensing and expansion guidance',
-      'Cross-border compliance oversight'
+      'Dedicated Compliance Partner',
+      'Regulatory Guidance',
+      'Board & Management Support',
+      'Business Expansion Advisory',
+      'Compliance Strategy'
     ],
-    outcome: 'A scalable, multi-jurisdiction compliance framework built for international growth.'
+    outcome: 'An experienced compliance function without building one in-house.'
   }
 ]
 

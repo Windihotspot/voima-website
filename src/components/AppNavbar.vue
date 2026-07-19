@@ -8,19 +8,20 @@ const open = ref(false)
 const links = [
   { name: 'Home', to: '/' },
   { name: 'About Us', to: '/about' },
+  { name: 'Our Story', to: '/our-story' },
   { name: 'Services', to: '/services' },
   { name: 'Contact Us', to: '/contact' }
 ]
 </script>
 
 <template>
-  <header class="sticky top-0 z-50 bg-[#0B1220]/90 backdrop-blur-md border-b border-white/10">
+  <header class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-[#DDE3E0]">
     <div class="max-w-7xl mx-auto px-6 lg:px-10 flex items-center justify-between h-16">
       <RouterLink to="/" class="flex items-center shrink-0">
         <img
-          src="../assets/Voima.jpeg"
+          src="../assets/voima-logo.png"
           alt="Voima CaaS"
-          class="h-9 w-auto object-contain sm:h-10"
+          class="h-9 w-24 w-auto object-contain sm:h-10"
         />
       </RouterLink>
 
@@ -30,7 +31,7 @@ const links = [
           :key="link.to"
           :to="link.to"
           class="transition-colors"
-          :class="route.path === link.to ? 'text-[#3FBF8F]' : 'text-white/70 hover:text-white'"
+          :class="route.path === link.to ? 'text-[#1F8A63]' : 'text-[#5B6472] hover:text-[#0B1220]'"
         >
           {{ link.name }}
         </RouterLink>
@@ -41,7 +42,7 @@ const links = [
           href="https://www.waitlist.voimacaas.co.uk/"
           target="_blank"
           rel="noopener noreferrer"
-          class="group hidden sm:inline-flex items-center justify-center px-5 py-2.5 rounded-full border border-white/20 bg-white/5 backdrop-blur-sm text-xs font-['IBM_Plex_Mono'] uppercase tracking-widest text-white transition-all duration-300 ease-out hover:bg-green hover:border-green hover:shadow-[0_0_25px_rgba(34,197,94,0.45)] hover:-translate-y-0.5 active:translate-y-0"
+          class="group hidden sm:inline-flex items-center justify-center px-5 py-2.5 rounded-full border border-[#0B1220]/15 bg-[#0B1220]/[0.03] backdrop-blur-sm text-xs font-['IBM_Plex_Mono'] uppercase tracking-widest text-[#0B1220] transition-all duration-300 ease-out hover:bg-[#1F8A63] hover:border-[#1F8A63] hover:text-white hover:shadow-[0_0_25px_rgba(31,138,99,0.35)] hover:-translate-y-0.5 active:translate-y-0"
         >
           <span class="transition-transform duration-300 group-hover:tracking-[0.18em]">
             Join the Wait List
@@ -60,7 +61,7 @@ const links = [
         </a>
 
         <button
-          class="md:hidden text-white p-2 -mr-2"
+          class="md:hidden text-[#0B1220] p-2 -mr-2"
           aria-label="Toggle menu"
           @click="open = !open"
         >
@@ -91,24 +92,26 @@ const links = [
     </div>
 
     <!-- Mobile menu -->
-    <div v-if="open" class="md:hidden border-t border-white/10 bg-[#0B1220] px-6 py-4 space-y-1">
+    <div v-if="open" class="md:hidden border-t border-[#DDE3E0] bg-white px-6 py-4 space-y-1">
       <RouterLink
         v-for="link in links"
         :key="link.to"
         :to="link.to"
         class="block py-2.5 text-sm font-['IBM_Plex_Mono']"
-        :class="route.path === link.to ? 'text-[#3FBF8F]' : 'text-white/70'"
+        :class="route.path === link.to ? 'text-[#1F8A63]' : 'text-[#5B6472]'"
         @click="open = false"
       >
         {{ link.name }}
       </RouterLink>
-      <RouterLink
-        to="/contact"
-        class="block mt-3 text-center text-xs font-['IBM_Plex_Mono'] uppercase tracking-wide border border-white/20 text-white px-4 py-2.5 rounded-full"
+      <a
+        href="https://www.waitlist.voimacaas.co.uk/"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="block mt-3 text-center text-xs font-['IBM_Plex_Mono'] uppercase tracking-wide border border-[#0B1220]/15 text-[#0B1220] px-4 py-2.5 rounded-full"
         @click="open = false"
       >
         Join the wait list
-      </RouterLink>
+      </a>
     </div>
   </header>
 </template>

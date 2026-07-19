@@ -5,34 +5,128 @@ import AppNavbar from '@/components/AppNavbar.vue'
 
 /* ------------------------------------------------------------------
    Live Compliance Register — the hero's signature element.
-   Cycles a set of regulatory checks through pending -> verified,
-   the way a real monitoring system would, to dramatise the core
-   promise: compliance turned into a running system, not a binder.
 ------------------------------------------------------------------- */
 const registerEntries = reactive([
   {
-    code: 'AML-CFT-014',
-    label: 'Transaction monitoring rule set',
-    status: 'verified',
+    code: 'GOV-01',
+    label: 'Governance Framework',
+    status: 'Active',
+    category: 'good',
     time: '2m ago'
   },
-  { code: 'KYC-ONB-002', label: 'Client onboarding checks', status: 'verified', time: '11m ago' },
-  { code: 'SANC-SCR-007', label: 'Sanctions & PEP screening', status: 'pending', time: 'running' },
-  { code: 'GDPR-DPA-019', label: 'Data processing register', status: 'verified', time: '1h ago' },
-  { code: 'FCA-REP-005', label: 'Quarterly regulatory return', status: 'pending', time: 'running' }
+  {
+    code: 'FCP-02',
+    label: 'Financial Crime Programme',
+    status: 'Healthy',
+    category: 'good',
+    time: '5m ago'
+  },
+  { code: 'AML-03', label: 'AML/CFT Controls', status: 'Active', category: 'good', time: '9m ago' },
+  {
+    code: 'GAP-04',
+    label: 'Gap Analysis',
+    status: 'On-going',
+    category: 'progress',
+    time: 'running'
+  },
+  {
+    code: 'CDD-05',
+    label: 'Customer Due Diligence',
+    status: 'Compliant',
+    category: 'good',
+    time: '14m ago'
+  },
+  {
+    code: 'SANC-06',
+    label: 'Sanctions Compliance',
+    status: 'Compliant',
+    category: 'good',
+    time: '18m ago'
+  },
+  {
+    code: 'TXM-07',
+    label: 'Transaction Monitoring Control',
+    status: 'Integrated',
+    category: 'good',
+    time: '22m ago'
+  },
+  {
+    code: 'REG-08',
+    label: 'Regulatory Reporting',
+    status: 'Monitoring',
+    category: 'progress',
+    time: 'running'
+  },
+  {
+    code: 'RISK-09',
+    label: 'Risk Management Framework',
+    status: 'Active',
+    category: 'good',
+    time: '31m ago'
+  },
+  {
+    code: 'TPO-10',
+    label: 'Third-Party Oversight',
+    status: 'Healthy',
+    category: 'good',
+    time: '38m ago'
+  },
+  {
+    code: 'DP-11',
+    label: 'Data Protection',
+    status: 'Compliant',
+    category: 'good',
+    time: '44m ago'
+  },
+  {
+    code: 'TRN-12',
+    label: 'Training & Competency',
+    status: 'Active',
+    category: 'good',
+    time: '52m ago'
+  },
+  {
+    code: 'POL-13',
+    label: 'Policy Management',
+    status: 'Current',
+    category: 'good',
+    time: '1h ago'
+  },
+  {
+    code: 'AUD-14',
+    label: 'Audit & Assurance',
+    status: 'Monitoring',
+    category: 'progress',
+    time: 'running'
+  },
+  {
+    code: 'VEN-15',
+    label: 'Vendor Management',
+    status: 'Active',
+    category: 'good',
+    time: '1h ago'
+  },
+  {
+    code: 'INC-16',
+    label: 'Incident Management',
+    status: 'No Open Issues',
+    category: 'good',
+    time: '2h ago'
+  }
 ])
 
 let cycle
 onMounted(() => {
   cycle = setInterval(() => {
-    const pendingIdx = registerEntries.findIndex((e) => e.status === 'pending')
-    if (pendingIdx !== -1) {
-      registerEntries[pendingIdx].status = 'verified'
-      registerEntries[pendingIdx].time = 'just now'
+    const idx = registerEntries.findIndex((e) => e.category === 'progress')
+    if (idx !== -1) {
+      const original = { ...registerEntries[idx] }
+      registerEntries[idx].category = 'good'
+      registerEntries[idx].time = 'just now'
       setTimeout(() => {
-        const next = registerEntries[pendingIdx]
-        next.status = 'pending'
-        next.time = 'running'
+        registerEntries[idx].category = original.category
+        registerEntries[idx].status = original.status
+        registerEntries[idx].time = 'running'
       }, 3400)
     }
   }, 2600)
@@ -74,7 +168,8 @@ const risks = [
   'Delayed authorisation',
   'Bank account termination',
   'Regulatory scrutiny',
-  'Loss of investor confidence'
+  'Loss of investor confidence',
+  'Regulatory fines & sanctions'
 ]
 
 const plans = [
@@ -82,12 +177,16 @@ const plans = [
     name: 'Starter',
     price: '£300',
     code: 'TIER-01',
-    desc: 'For early-stage SMEs building their first compliance foundation.',
+    desc: 'Suitable for: Non-regulated businesses, non-financial institutions, start-ups, and early-stage SMEs within the financial sector seeking to establish a strong corporate governance and compliance foundation.',
     features: [
-      'Core AML & KYC framework',
-      'GDPR data register',
-      'Monthly compliance check-in',
-      'Email support'
+      'Corporate governance framework',
+      'Access to Compliance Health Reviews',
+      'GDPR compliance alignment',
+      'Periodic compliance check-ins',
+      'Core AML/CFT framework',
+      'Compliance Health Assessment',
+      'Policy and procedure review',
+      'Ongoing compliance guidance'
     ]
   },
   {
@@ -96,10 +195,14 @@ const plans = [
     code: 'TIER-02',
     desc: 'For scaling businesses with active regulatory exposure.',
     features: [
-      'Everything in Starter',
-      'Sanctions & PEP screening',
-      'Quarterly regulator-ready reporting',
-      'Priority support line'
+      'Dedicated Compliance Partner;',
+      'Quarterly Compliance Health Reviews',
+      'Regulatory Change Management',
+      'Compliance Action Tracking',
+      'Board & Management Reporting',
+      'Compliance Advisory Support',
+      'Risk & Control Reviews',
+      'Priority Support'
     ],
     featured: true
   },
@@ -109,10 +212,14 @@ const plans = [
     code: 'TIER-03',
     desc: 'For FCA-regulated firms needing full oversight.',
     features: [
-      'Everything in Growth',
-      'Dedicated compliance lead',
-      'Ongoing regulatory liaison',
-      'Board-level reporting'
+      'Dedicated Compliance Lead',
+      'Executive Compliance Oversight',
+      'Regulatory Engagement Support',
+      'Board & Committee Reporting',
+      'Strategic Compliance Advisory',
+      'Compliance Programme Management',
+      'Annual Compliance Planning',
+      'Unlimited Priority Support'
     ]
   }
 ]
@@ -120,23 +227,27 @@ const plans = [
 const steps = [
   {
     n: '01',
-    title: 'Discovery call',
-    desc: 'We map your business model and regulatory footprint.'
+    title: 'Discovery & Assessment',
+    desc: 'We understand your business, regulatory obligations, and compliance objectives.',
+    icon: 'fa-solid fa-magnifying-glass'
   },
   {
     n: '02',
-    title: 'Gap assessment',
-    desc: 'A clear report on where you stand against FCA, AML and GDPR requirements.'
+    title: 'Compliance Health Assessment',
+    desc: 'We assess your governance, controls, policies, and compliance maturity, then identify key gaps and priorities.',
+    icon: 'fa-solid fa-clipboard-check'
   },
   {
     n: '03',
-    title: 'Plan recommendation',
-    desc: 'We match you to the right tier and scope the workflows you need.'
+    title: 'Infrastructure Design',
+    desc: 'We configure your Voima workspace, define your compliance framework, and tailor your ongoing support.',
+    icon: 'fa-solid fa-sitemap'
   },
   {
     n: '04',
-    title: 'Onboarding',
-    desc: 'Your compliance system goes live — typically within two weeks.'
+    title: 'Go Live',
+    desc: 'Your compliance infrastructure is activated, giving you immediate access to compliance oversight, task management, reporting, and ongoing support.',
+    icon: 'fa-solid fa-rocket'
   }
 ]
 </script>
@@ -165,7 +276,7 @@ const steps = [
         <!-- Copy -->
         <div>
           <p class="font-['IBM_Plex_Mono'] text-xs uppercase tracking-[0.2em] text-[#1F8A63] mb-6">
-            Compliance as an operational service
+            Compliance as an operational structure
           </p>
           <h1
             class="font-['Fraunces'] text-white text-[2.75rem] sm:text-6xl leading-[1.05] tracking-tight mb-6"
@@ -180,16 +291,10 @@ const steps = [
 
           <div class="flex flex-wrap items-center gap-4 mb-10">
             <a
-              href="#contact"
+              href="https://calendly.com/generalkfk001/30min"
               class="bg-[#1F8A63] text-white px-6 py-3.5 rounded-lg font-medium hover:bg-[#1a7454] transition-colors"
             >
               Book a free compliance gap assessment
-            </a>
-            <a
-              href="#contact"
-              class="text-white/80 px-6 py-3.5 rounded-lg font-medium border border-white/20 hover:border-white/40 transition-colors"
-            >
-              Join the waitlist
             </a>
           </div>
 
@@ -210,15 +315,15 @@ const steps = [
             <div class="flex items-center justify-between px-5 py-3 border-b border-white/10">
               <span
                 class="font-['IBM_Plex_Mono'] text-[11px] uppercase tracking-widest text-white/40"
-                >Live compliance register</span
+                >Compliance Command Center</span
               >
               <span
                 class="flex items-center gap-1.5 text-[11px] font-['IBM_Plex_Mono'] text-[#1F8A63]"
               >
-                <span class="w-1.5 h-1.5 rounded-full bg-[#1F8A63] animate-pulse"></span> monitoring
+                <span class="w-1.5 h-1.5 rounded-full bg-[#1F8A63] animate-pulse"></span> Live
               </span>
             </div>
-            <ul class="divide-y divide-white/[0.06]">
+            <ul class="divide-y divide-white/[0.06] max-h-[420px] overflow-y-auto">
               <li
                 v-for="e in registerEntries"
                 :key="e.code"
@@ -233,12 +338,12 @@ const steps = [
                   <span
                     class="text-[10px] font-['IBM_Plex_Mono'] uppercase tracking-wide px-2 py-1 rounded-full transition-colors duration-500"
                     :class="
-                      e.status === 'verified'
+                      e.category === 'good'
                         ? 'bg-[#1F8A63]/15 text-[#3FBF8F]'
                         : 'bg-white/10 text-white/50'
                     "
                   >
-                    {{ e.status === 'verified' ? '✓ verified' : '● checking' }}
+                    {{ e.category === 'good' ? '✓ ' + e.status : '● ' + e.status }}
                   </span>
                 </div>
               </li>
@@ -300,27 +405,78 @@ const steps = [
         "
       >
         <div class="rounded-xl border border-[#DDE3E0] bg-white p-7">
-          <p class="font-['IBM_Plex_Mono'] text-xs text-[#5B6472] mb-3">GAP&nbsp;01</p>
-          <h3 class="font-medium text-lg mb-2">No internal expertise</h3>
+          <div class="flex items-center justify-between mb-3">
+            <p class="font-['IBM_Plex_Mono'] text-xs text-[#5B6472]">GAP&nbsp;01</p>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="w-12 h-12 text-[#1F8A63]"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <circle cx="12" cy="8" r="4" />
+              <path d="M4 21v-1a6 6 0 0 1 6-6h1" />
+              <path d="M17 14v3M17 20.5v.01" />
+            </svg>
+          </div>
+          <h3 class="font-medium text-lg mb-2">Lack of Internal Compliance Expertise</h3>
           <p class="text-[#5B6472] text-sm leading-relaxed">
-            Few SMEs have someone whose job is to track regulatory change and translate it into
-            practice.
+            Most SMEs do not have dedicated compliance professionals to monitor regulatory changes,
+            assess their impact, and implement the necessary actions.
           </p>
         </div>
+
         <div class="rounded-xl border border-[#DDE3E0] bg-white p-7">
-          <p class="font-['IBM_Plex_Mono'] text-xs text-[#5B6472] mb-3">GAP&nbsp;02</p>
-          <h3 class="font-medium text-lg mb-2">No structured systems</h3>
+          <div class="flex items-center justify-between mb-3">
+            <p class="font-['IBM_Plex_Mono'] text-xs text-[#5B6472]">GAP&nbsp;02</p>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="w-12 h-12 text-[#1F8A63]"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <rect x="4" y="4" width="7" height="7" rx="1" />
+              <rect x="13" y="4" width="7" height="7" rx="1" />
+              <rect x="4" y="13" width="7" height="7" rx="1" />
+              <path d="M17 14v6M14 17h6" stroke-dasharray="1 3" />
+            </svg>
+          </div>
+          <h3 class="font-medium text-lg mb-2">No Structured Compliance System</h3>
           <p class="text-[#5B6472] text-sm leading-relaxed">
-            Compliance lives in scattered spreadsheets and inboxes instead of a system anyone can
-            audit.
+            Compliance activities are often managed through scattered spreadsheets, emails, and
+            shared folders, making oversight, accountability, and audit readiness difficult.
           </p>
         </div>
+
         <div class="rounded-xl border border-[#DDE3E0] bg-white p-7">
-          <p class="font-['IBM_Plex_Mono'] text-xs text-[#5B6472] mb-3">GAP&nbsp;03</p>
-          <h3 class="font-medium text-lg mb-2">No budget for a hire</h3>
+          <div class="flex items-center justify-between mb-3">
+            <p class="font-['IBM_Plex_Mono'] text-xs text-[#5B6472]">GAP&nbsp;03</p>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="w-12 h-12 text-[#1F8A63]"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M12 2v2M12 20v2M4 12H2M22 12h-2" />
+              <circle cx="12" cy="12" r="7" />
+              <path d="M12 8v4l2.5 2.5" />
+            </svg>
+          </div>
+          <h3 class="font-medium text-lg mb-2">No Budget for a Dedicated Compliance Function</h3>
           <p class="text-[#5B6472] text-sm leading-relaxed">
-            An experienced compliance officer costs £65,000+ a year before pensions, software and
-            training.
+            Hiring an experienced compliance professional is costly, with salaries often exceeding
+            £65,000 per year before pensions, training, software, and other operational expenses.
           </p>
         </div>
       </div>
@@ -343,9 +499,10 @@ const steps = [
             Compliance, converted into a working system.
           </h2>
           <p class="text-white/60 text-lg leading-relaxed">
-            Voima CaaS replaces the cost of building an in-house compliance function with ongoing
-            oversight, operational support, monitoring and expert guidance — no full-time hire, no
-            fragmented consulting engagements.
+            Voima CaaS eliminates the need to build and maintain an in-house compliance function by
+            providing ongoing oversight, operational support, continuous monitoring, and expert
+            guidance through a single, integrated platform. No full-time compliance team, no
+            reliance on freelancers, and no fragmented consulting engagements.
           </p>
         </div>
 
@@ -360,24 +517,22 @@ const steps = [
         >
           <div class="bg-[#101B2D] p-8">
             <p class="font-['IBM_Plex_Mono'] text-xs uppercase tracking-widest text-white/40 mb-4">
-              Building it yourself
+              Traditional Compliance Framework
             </p>
             <ul class="space-y-3 text-white/60 text-sm">
               <li class="flex gap-3">
-                <span class="text-white/25">—</span>£65,000–£85,000/yr for a compliance lead alone
+                <span class="text-white/25">—</span>£95,000+ annual compliance cost
               </li>
               <li class="flex gap-3">
-                <span class="text-white/25">—</span>£95,000+/yr once pensions, software and training
-                are added
+                <span class="text-white/25">—</span>No central compliance system
               </li>
               <li class="flex gap-3">
-                <span class="text-white/25">—</span>Project-based consultants add further cost with
-                little continuity
+                <span class="text-white/25">—</span>Reliance on consultants and freelancers
               </li>
               <li class="flex gap-3">
-                <span class="text-white/25">—</span>Software tools that still require internal
-                expertise to run
+                <span class="text-white/25">—</span>Limited compliance visibility
               </li>
+              <li class="flex gap-3"><span class="text-white/25">—</span>Higher regulatory risk</li>
             </ul>
           </div>
           <div class="bg-[#101B2D] p-8">
@@ -399,6 +554,10 @@ const steps = [
               </li>
               <li class="flex gap-3">
                 <span class="text-[#3FBF8F]">✓</span>No hiring. No delays. No guesswork.
+              </li>
+              <li class="flex gap-3">
+                <span class="text-[#3FBF8F]">✓</span>Access a compliance partner with 12+ years of
+                experience.
               </li>
             </ul>
           </div>
@@ -516,7 +675,7 @@ const steps = [
             </li>
           </ul>
           <a
-            href="#contact"
+            href="https://calendly.com/generalkfk001/30min"
             class="text-center rounded-lg py-3 text-sm font-medium transition-colors"
             :class="
               p.featured
@@ -556,7 +715,10 @@ const steps = [
           "
         >
           <div v-for="(s, i) in steps" :key="s.n" class="relative">
-            <p class="font-['Fraunces'] text-5xl text-[#1F8A63]/25 mb-4">{{ s.n }}</p>
+            <div class="flex items-center gap-3 mb-4">
+              <i :class="s.icon" class="text-lg text-[#1F8A63]"></i>
+              <p class="font-['Fraunces'] text-5xl text-[#1F8A63]">{{ s.n }}</p>
+            </div>
             <h3 class="font-medium text-lg mb-2">{{ s.title }}</h3>
             <p class="text-sm text-[#5B6472] leading-relaxed">{{ s.desc }}</p>
             <div

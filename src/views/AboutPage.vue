@@ -7,18 +7,21 @@ import AppFooter from '../components/AppFooter.vue'
 const values = [
   {
     code: 'VAL-01',
-    title: 'Operational, not theoretical',
-    desc: 'We build systems your team runs day to day — not policy documents that sit in a drawer.'
+    title: 'One compliance infrastructure',
+    desc: 'Bring governance, policies, tasks, reporting, and oversight together in one place.',
+    icon: 'fa-solid fa-layer-group'
   },
   {
     code: 'VAL-02',
-    title: 'Regulator-ready by design',
-    desc: 'Every framework is mapped to FCA, AML/CFT, UK GDPR, FATF and HMRC requirements from the outset.'
+    title: 'Always audit-ready',
+    desc: 'Maintain evidence, track actions, and demonstrate compliance with confidence.',
+    icon: 'fa-solid fa-shield-halved'
   },
   {
     code: 'VAL-03',
-    title: 'Built for SMEs',
-    desc: 'Priced and scoped for growing businesses, not large corporates with in-house legal teams.'
+    title: 'Your outsourced compliance function',
+    desc: 'Access experienced compliance leadership without the cost of building an in-house team.',
+    icon: 'fa-solid fa-user-tie'
   }
 ]
 
@@ -117,7 +120,7 @@ onUnmounted(() => observer && observer.disconnect())
           Why we exist
         </p>
         <h2 class="font-['Fraunces'] text-4xl tracking-tight mb-6">
-          Compliance shouldn't require a hire, or a binder.
+          Compliance shouldn't be a daily burden.
         </h2>
         <p class="text-[#5B6472] leading-relaxed mb-4">
           Most SMEs lack the internal expertise, structured systems, and budget to manage compliance
@@ -180,11 +183,14 @@ onUnmounted(() => observer && observer.disconnect())
             :key="v.code"
             class="rounded-xl border border-white/10 bg-[#101B2D] p-8"
           >
-            <p
-              class="font-['IBM_Plex_Mono'] text-[11px] uppercase tracking-widest text-[#1F8A63] mb-4"
-            >
-              {{ v.code }}
-            </p>
+            <div class="flex items-center justify-between mb-4">
+              <p
+                class="font-['IBM_Plex_Mono'] text-[11px] uppercase tracking-widest text-[#1F8A63]"
+              >
+                {{ v.code }}
+              </p>
+              <i :class="v.icon" class="text-xl text-[#1F8A63]"></i>
+            </div>
             <h3 class="font-['Fraunces'] text-2xl text-white mb-3">{{ v.title }}</h3>
             <p class="text-white/60 text-sm leading-relaxed">{{ v.desc }}</p>
           </div>
@@ -213,7 +219,7 @@ onUnmounted(() => observer && observer.disconnect())
         :class="revealed.has('tl-grid') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'"
       >
         <div v-for="(s, i) in timeline" :key="s.n" class="relative">
-          <p class="font-['Fraunces'] text-5xl text-[#1F8A63]/25 mb-4">{{ s.n }}</p>
+          <p class="font-['Fraunces'] text-5xl text-[#1F8A63] mb-4">{{ s.n }}</p>
           <h3 class="font-medium text-lg mb-2">{{ s.title }}</h3>
           <p class="text-sm text-[#5B6472] leading-relaxed">{{ s.desc }}</p>
           <div
