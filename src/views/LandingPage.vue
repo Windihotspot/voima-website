@@ -565,6 +565,77 @@ const steps = [
       </div>
     </section>
 
+    <!-- ============ AI-POWERED COMPLIANCE ============ -->
+    <section id="ai" class="bg-[#0B1220] py-28">
+      <div class="max-w-7xl mx-auto px-6 lg:px-10">
+        <div
+          data-reveal="ai-head"
+          class="max-w-2xl mb-16 transition-all duration-700"
+          :class="revealed.has('ai-head') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'"
+        >
+          <p class="font-['IBM_Plex_Mono'] text-xs uppercase tracking-[0.2em] text-[#1F8A63] mb-4">
+            Powered by AI
+          </p>
+          <h2 class="font-['Fraunces'] text-white text-4xl sm:text-5xl tracking-tight mb-6">
+            Compliance, accelerated by AI.
+          </h2>
+          <p class="text-white/60 text-lg leading-relaxed">
+            Voima CaaS is an evolving platform. We use AI to monitor, flag, and draft — so our
+            compliance experts spend less time on manual tracking and more time on judgment,
+            oversight, and delivery.
+          </p>
+        </div>
+
+        <div
+          data-reveal="ai-grid"
+          class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 transition-all duration-700 delay-100"
+          :class="revealed.has('ai-grid') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'"
+        >
+          <div class="rounded-xl border border-white/10 bg-[#101B2D] p-7">
+            <i class="fa-solid fa-satellite-dish text-lg text-[#1F8A63] mb-4 block"></i>
+            <h3 class="font-medium text-white text-lg mb-2">Regulatory change monitoring</h3>
+            <p class="text-white/50 text-sm leading-relaxed">
+              AI continuously scans regulatory updates and flags what's relevant to your business,
+              so nothing slips through unnoticed.
+            </p>
+          </div>
+          <div class="rounded-xl border border-white/10 bg-[#101B2D] p-7">
+            <i class="fa-solid fa-gauge-high text-lg text-[#1F8A63] mb-4 block"></i>
+            <h3 class="font-medium text-white text-lg mb-2">Risk scoring & prioritisation</h3>
+            <p class="text-white/50 text-sm leading-relaxed">
+              Assessment responses are scored and ranked automatically, surfacing your
+              highest-priority gaps first instead of a flat checklist.
+            </p>
+          </div>
+          <div class="rounded-xl border border-white/10 bg-[#101B2D] p-7">
+            <i class="fa-solid fa-file-pen text-lg text-[#1F8A63] mb-4 block"></i>
+            <h3 class="font-medium text-white text-lg mb-2">Drafted reports & policies</h3>
+            <p class="text-white/50 text-sm leading-relaxed">
+              AI drafts first-pass policies and regulator-ready reports, which our compliance team
+              reviews, refines, and signs off — never sent unchecked.
+            </p>
+          </div>
+          <div class="rounded-xl border border-white/10 bg-[#101B2D] p-7">
+            <i class="fa-solid fa-bell text-lg text-[#1F8A63] mb-4 block"></i>
+            <h3 class="font-medium text-white text-lg mb-2">Smart alerts</h3>
+            <p class="text-white/50 text-sm leading-relaxed">
+              Anomalies, missed deadlines, and control gaps trigger real-time alerts to your team
+              and ours — before they become findings.
+            </p>
+          </div>
+        </div>
+
+        <p
+          data-reveal="ai-note"
+          class="mt-10 text-white/40 text-sm font-['IBM_Plex_Mono'] max-w-2xl transition-all duration-700 delay-200"
+          :class="revealed.has('ai-note') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'"
+        >
+          AI supports our compliance experts — it does not replace them. Every output is reviewed by
+          a qualified professional before it reaches you or a regulator.
+        </p>
+      </div>
+    </section>
+
     <!-- ============ OBLIGATIONS + RISK ============ -->
     <section class="max-w-7xl mx-auto px-6 lg:px-10 py-28 grid lg:grid-cols-2 gap-12">
       <div
