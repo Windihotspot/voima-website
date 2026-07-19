@@ -55,7 +55,7 @@ const offerings = [
   },
   {
     code: 'SVC-03',
-    title: 'Compliance Advisory',
+    title: 'Compliance Expert Assurance',
     desc: 'Dedicated compliance expertise to support growth, governance, and regulatory readiness.',
     includes: [
       'Dedicated Compliance Partner',
@@ -166,7 +166,7 @@ onUnmounted(() => observer && observer.disconnect())
         <h1
           class="font-['Fraunces'] text-white text-4xl sm:text-6xl leading-[1.05] tracking-tight mb-6 max-w-3xl"
         >
-          Outsourced compliance, run as an operational service.
+          Outsourced compliance, run as an operational structure.
         </h1>
         <p class="text-white/60 text-lg leading-relaxed max-w-2xl">
           FCA support, AML frameworks, GDPR compliance and regulatory systems for SMEs — built and
