@@ -84,46 +84,6 @@ const whyUs = [
   }
 ]
 
-const plans = [
-  {
-    name: 'Starter',
-    price: '£300',
-    code: 'TIER-01',
-    desc: 'For early-stage firms.',
-    features: [
-      'Core AML & KYC framework',
-      'GDPR data register',
-      'Monthly compliance check-in',
-      'Email support'
-    ]
-  },
-  {
-    name: 'Growth',
-    price: '£700',
-    code: 'TIER-02',
-    desc: 'For active businesses.',
-    features: [
-      'Everything in Starter',
-      'Sanctions & PEP screening',
-      'Quarterly regulator-ready reporting',
-      'Priority support line'
-    ],
-    featured: true
-  },
-  {
-    name: 'Regulated',
-    price: '£1,300',
-    code: 'TIER-03',
-    desc: 'For high-risk, regulated firms.',
-    features: [
-      'Everything in Growth',
-      'Dedicated compliance lead',
-      'Ongoing regulatory liaison',
-      'Board-level reporting'
-    ]
-  }
-]
-
 const revealed = ref(new Set())
 let observer
 onMounted(() => {
@@ -138,6 +98,57 @@ onMounted(() => {
   document.querySelectorAll('[data-reveal]').forEach((el) => observer.observe(el))
 })
 onUnmounted(() => observer && observer.disconnect())
+const plans = [
+  {
+    name: 'Starter',
+    price: '£300',
+    code: 'TIER-01',
+    desc: 'Suitable for: Non-regulated businesses, non-financial institutions, start-ups, and early-stage SMEs within the financial sector seeking to establish a strong corporate governance and compliance foundation.',
+    features: [
+      'Corporate governance framework',
+      'Access to Compliance Health Reviews',
+      'GDPR compliance alignment',
+      'Periodic compliance check-ins',
+      'Core AML/CFT framework',
+      'Compliance Health Assessment',
+      'Policy and procedure review',
+      'Ongoing compliance guidance'
+    ]
+  },
+  {
+    name: 'Growth',
+    price: '£700',
+    code: 'TIER-02',
+    desc: 'For scaling businesses with active regulatory exposure.',
+    features: [
+      'Dedicated Compliance Partner;',
+      'Quarterly Compliance Health Reviews',
+      'Regulatory Change Management',
+      'Compliance Action Tracking',
+      'Board & Management Reporting',
+      'Compliance Advisory Support',
+      'Risk & Control Reviews',
+      'Priority Support'
+    ],
+    featured: true
+  },
+  {
+    name: 'Regulated',
+    price: '£1,300',
+    code: 'TIER-03',
+    desc: 'For FCA-regulated firms needing full oversight.',
+    features: [
+      'Dedicated Compliance Lead',
+      'Executive Compliance Oversight',
+      'Regulatory Engagement Support',
+      'Board & Committee Reporting',
+      'Strategic Compliance Advisory',
+      'Compliance Programme Management',
+      'Annual Compliance Planning',
+      'Unlimited Priority Support'
+    ]
+  }
+]
 </script>
 
 <template>
@@ -314,7 +325,7 @@ onUnmounted(() => observer && observer.disconnect())
             Our pricing
           </p>
           <h2 class="font-['Fraunces'] text-4xl sm:text-5xl tracking-tight mb-4">
-            Compliance services pricing, UK.
+            Compliance structure pricing, UK.
           </h2>
           <p class="text-[#5B6472] text-lg">
             Flexible plans from £300/month — FCA compliance, AML controls, GDPR, onboarding and
@@ -323,10 +334,10 @@ onUnmounted(() => observer && observer.disconnect())
         </div>
 
         <div
-          data-reveal="price-grid"
+          data-reveal="pricing-cards"
           class="grid md:grid-cols-3 gap-6 transition-all duration-700 delay-100"
           :class="
-            revealed.has('price-grid') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
+            revealed.has('pricing-cards') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
           "
         >
           <div
@@ -335,7 +346,7 @@ onUnmounted(() => observer && observer.disconnect())
             class="rounded-xl p-8 flex flex-col"
             :class="
               p.featured
-                ? 'bg-[#0B1220] text-white shadow-xl md:scale-[1.03]'
+                ? 'bg-[#0B1220] text-white shadow-xl scale-[1.03]'
                 : 'bg-white border border-[#DDE3E0]'
             "
           >
@@ -361,8 +372,8 @@ onUnmounted(() => observer && observer.disconnect())
                 <span :class="p.featured ? 'text-white/80' : 'text-[#0B1220]'">{{ f }}</span>
               </li>
             </ul>
-            <RouterLink
-              to="/contact"
+            <a
+              href="https://calendly.com/generalkfk001/30min"
               class="text-center rounded-lg py-3 text-sm font-medium transition-colors"
               :class="
                 p.featured
@@ -370,8 +381,8 @@ onUnmounted(() => observer && observer.disconnect())
                   : 'border border-[#0B1220]/15 hover:bg-[#0B1220] hover:text-white'
               "
             >
-              Book a meeting
-            </RouterLink>
+              Get connected
+            </a>
           </div>
         </div>
       </div>

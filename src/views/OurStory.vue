@@ -249,6 +249,75 @@ const marketingPolicy = [
       </div>
     </section>
 
+    <!-- ============ AI-POWERED COMPLIANCE ============ -->
+    <section class="bg-[#0B1220] py-28">
+      <div class="max-w-7xl mx-auto px-6 lg:px-10">
+        <div
+          data-reveal="ai-head"
+          class="max-w-2xl mb-16 transition-all duration-700"
+          :class="revealed.has('ai-head') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'"
+        >
+          <p class="font-['IBM_Plex_Mono'] text-xs uppercase tracking-[0.2em] text-[#1F8A63] mb-4">
+            How we work
+          </p>
+          <h2 class="font-['Fraunces'] text-white text-4xl sm:text-5xl tracking-tight mb-6">
+            Compliance, accelerated by AI.
+          </h2>
+          <p class="text-white/60 text-lg leading-relaxed">
+            Voima CaaS is an evolving platform. We use AI to monitor, flag, and draft — so our team
+            spends less time on manual tracking and more time on judgment, oversight, and delivery.
+          </p>
+        </div>
+
+        <div
+          data-reveal="ai-grid"
+          class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 transition-all duration-700 delay-100"
+          :class="revealed.has('ai-grid') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'"
+        >
+          <div class="rounded-xl border border-white/10 bg-[#101B2D] p-7">
+            <i class="fa-solid fa-radar text-lg text-[#1F8A63] mb-4 block"></i>
+            <h3 class="font-medium text-white text-lg mb-2">Regulatory change monitoring</h3>
+            <p class="text-white/50 text-sm leading-relaxed">
+              AI continuously scans regulatory updates and flags what's relevant to your business,
+              so nothing slips through unnoticed.
+            </p>
+          </div>
+          <div class="rounded-xl border border-white/10 bg-[#101B2D] p-7">
+            <i class="fa-solid fa-gauge-high text-lg text-[#1F8A63] mb-4 block"></i>
+            <h3 class="font-medium text-white text-lg mb-2">Risk scoring & prioritisation</h3>
+            <p class="text-white/50 text-sm leading-relaxed">
+              Assessment responses are scored and ranked automatically, surfacing your
+              highest-priority gaps first instead of a flat checklist.
+            </p>
+          </div>
+          <div class="rounded-xl border border-white/10 bg-[#101B2D] p-7">
+            <i class="fa-solid fa-file-pen text-lg text-[#1F8A63] mb-4 block"></i>
+            <h3 class="font-medium text-white text-lg mb-2">Drafted reports & policies</h3>
+            <p class="text-white/50 text-sm leading-relaxed">
+              AI drafts first-pass policies and regulator-ready reports, which our compliance team
+              reviews, refines, and signs off — never sent unchecked.
+            </p>
+          </div>
+          <div class="rounded-xl border border-white/10 bg-[#101B2D] p-7">
+            <i class="fa-solid fa-bell text-lg text-[#1F8A63] mb-4 block"></i>
+            <h3 class="font-medium text-white text-lg mb-2">Smart alerts</h3>
+            <p class="text-white/50 text-sm leading-relaxed">
+              Anomalies, missed deadlines, and control gaps trigger real-time alerts to your team
+              and ours — before they become findings.
+            </p>
+          </div>
+        </div>
+
+        <p
+          data-reveal="ai-note"
+          class="mt-10 text-white/40 text-sm font-['IBM_Plex_Mono'] max-w-2xl transition-all duration-700 delay-200"
+          :class="revealed.has('ai-note') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'"
+        >
+          AI supports our compliance experts — it does not replace them. Every output is reviewed by
+          a qualified professional before it reaches you or a regulator.
+        </p>
+      </div>
+    </section>
     <!-- ============ MISSION / VISION ============ -->
     <section class="max-w-7xl mx-auto px-6 lg:px-10 mt-28">
       <div
@@ -367,10 +436,12 @@ const marketingPolicy = [
         </p>
 
         <!-- Image placeholder -->
-        <div class="w-40 mx-auto rounded-xl overflow-hidden border border-[#DDE3E0] bg-white mb-6">
+        <div
+          class="w-60 h-80 mx-auto rounded-xl overflow-hidden border border-[#DDE3E0] bg-white mb-6"
+        >
           <!-- Replace this img src with the founder photo -->
           <img
-            src="../assets/Kanayo-224x300.jpeg"
+            src="../assets/founder.jpeg"
             alt="Kanayo Frank Kemuwa"
             class="w-full h-full object-cover"
           />
@@ -380,20 +451,44 @@ const marketingPolicy = [
         <p class="font-['IBM_Plex_Mono'] text-xs uppercase tracking-widest text-[#5B6472] mb-6">
           Founder
         </p>
+        <a
+          href="https://www.linkedin.com/in/kanayokemuwa"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center justify-center w-9 h-9 rounded-full border border-[#DDE3E0] hover:border-[#1F8A63] hover:bg-[#1F8A63]/5 transition-colors mb-6"
+          aria-label="Kanayo Frank Kemuwa on LinkedIn"
+        >
+          <img
+            src="../assets/icons8-linkedin-48.png"
+            alt="LinkedIn"
+            class="w-4 h-4 object-contain"
+          />
+        </a>
 
         <p class="text-[#5B6472] text-lg leading-relaxed mb-4">
-          Founded by Kanayo Frank Kemuwa, Voima CaaS was built from direct experience inside
-          regulated financial environments across compliance operations, risk management, and
-          cross-border business oversight.
+          Founded by Kanayo Frank Kemuwa, Voima CaaS is led by a compliance executive with more than
+          12 years of experience designing, implementing, and strengthening compliance and risk
+          frameworks across regulated financial institutions and cross-border businesses
         </p>
         <p class="text-[#5B6472] text-lg leading-relaxed mb-4">
-          With over 12 years of industry experience, the focus remains simple: build practical
-          compliance systems that help small businesses operate with structure, confidence, and
-          regulatory readiness.
+          Having led compliance functions, managed regulatory engagements, built AML and KYC
+          frameworks, and supported businesses operating across multiple jurisdictions, Kanayo
+          understands the gap between regulatory expectations and the day-to-day realities faced by
+          growing businesses.
+        </p>
+        <p class="text-[#5B6472] text-lg leading-relaxed mb-4">
+          Voima CaaS was established to close that gap.
+        </p>
+        <p class="text-[#5B6472] text-lg leading-relaxed mb-4">
+          We provide practical, executive-level compliance support that helps SMEs build governance
+          structures, manage regulatory obligations, reduce operational risk, and scale with
+          confidence. Our approach combines strategic oversight with hands-on execution, delivering
+          compliance as an ongoing business function rather than a one-off consulting exercise.
         </p>
         <p class="text-[#5B6472] text-lg leading-relaxed">
-          Voima CaaS combines operational execution with scalable compliance support designed for
-          modern SMEs navigating increasing regulatory demands.
+          At Voima CaaS, compliance is not treated as a regulatory burden. It is positioned as the
+          foundation for sustainable growth, operational resilience, and long-term business
+          credibility.
         </p>
       </div>
     </section>

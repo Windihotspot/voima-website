@@ -26,8 +26,8 @@ const values = [
 ]
 
 const credentials = [
-  { stat: '12+', label: 'Years regulatory compliance experience' },
-  { stat: '4', label: 'Regulated sectors actively supported' },
+  { stat: '15+', label: 'Years regulatory compliance experience' },
+  { stat: '4', label: 'Regulated and Non-Regulated sectors actively supported' },
   { stat: '2 wks', label: 'Typical time to go live' },
   { stat: '£300', label: 'Starting monthly investment' }
 ]
@@ -237,7 +237,7 @@ onUnmounted(() => observer && observer.disconnect())
       ></div>
       <div class="relative max-w-3xl mx-auto px-6 text-center">
         <h2 class="font-['Fraunces'] text-white text-3xl sm:text-4xl tracking-tight mb-6">
-          Built for SMEs. Backed by 12+ years of regulatory experience.
+          Built for SMEs. Backed by 15+ years of regulatory experience.
         </h2>
         <RouterLink
           to="/contact"

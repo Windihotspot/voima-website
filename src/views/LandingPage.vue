@@ -624,7 +624,7 @@ const steps = [
         "
       >
         <p class="font-['IBM_Plex_Mono'] text-xs uppercase tracking-[0.2em] text-[#1F8A63] mb-4">
-          Pricing snapshot
+          Tier snapshot
         </p>
         <h2 class="font-['Fraunces'] text-4xl sm:text-5xl tracking-tight mb-4">
           Three tiers. No long-term commitment.
@@ -662,12 +662,12 @@ const steps = [
           <p class="text-sm mb-6" :class="p.featured ? 'text-white/50' : 'text-[#5B6472]'">
             {{ p.desc }}
           </p>
-          <p class="mb-6">
+          <!-- <p class="mb-6">
             <span class="font-['Fraunces'] text-4xl">{{ p.price }}</span>
             <span class="text-sm" :class="p.featured ? 'text-white/40' : 'text-[#5B6472]'"
               >/mo</span
             >
-          </p>
+          </p> -->
           <ul class="space-y-2.5 mb-8 flex-1">
             <li v-for="f in p.features" :key="f" class="flex gap-2.5 text-sm">
               <span :class="p.featured ? 'text-[#3FBF8F]' : 'text-[#1F8A63]'">✓</span>
