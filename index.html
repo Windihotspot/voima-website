@@ -2,11 +2,21 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <script>
+      // Restore the real path after a GitHub Pages 404 redirect
+      ;(function () {
+        var redirect = sessionStorage.redirect
+        delete sessionStorage.redirect
+        if (redirect && redirect !== location.href) {
+          history.replaceState(null, null, redirect)
+        }
+      })()
+    </script>
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Sora:wght@100..800&display=swap"
     />
-    <link rel="icon" href="/src/assets/Voima.jpeg" />
+    <link rel="icon" href="/src/assets/voima-logo.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Voima</title>
   </head>
